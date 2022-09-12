@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Profile = ({username,tag,location,avatar,stats:{followers,views,likes}}) =>{
 return (
  <div class="profile">
@@ -5,11 +7,11 @@ return (
     <img
       src={avatar}
       alt={username}
-      class="avatar"
+      class="profile__img"
     />
-    <p class="name">{username}</p>
-    <p class="tag">{tag}</p>
-    <p class="location">{location}</p>
+    <p class="profile__name">{username}</p>
+    <p class="profile__tag">{tag}</p>
+    <p class="profile__location">{location}</p>
   </div>
 
   <ul class="stats">
@@ -29,5 +31,13 @@ return (
 </div> 
 )
 }
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired,
+};
 
 export default Profile;

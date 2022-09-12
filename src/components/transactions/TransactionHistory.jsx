@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import randomColor from 'js/randomColor';
 
 const TransactionHistory = ({items}) => {
   return (
-    <table class="transaction-history">
+    <section class="transaction__section">
+          <table class="transaction__table">
       <thead>
       <tr style={{ backgroundColor: randomColor() }}>
           <th>Type</th>
@@ -23,7 +25,18 @@ const TransactionHistory = ({items}) => {
         })}
       </tbody>
     </table>
+    </section>
+
   );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired,
+
 };
 
 export default TransactionHistory;
