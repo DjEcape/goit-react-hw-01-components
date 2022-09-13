@@ -7,9 +7,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(160, 247, 252);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+text-align: center;
+color: rgb(23, 20, 42);
+}
+
+/* #root{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+p, span, td{
+  color: aliceblue;
 }

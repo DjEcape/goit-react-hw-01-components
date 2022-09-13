@@ -1,36 +1,39 @@
 import PropTypes from 'prop-types';
 import randomColor from 'js/randomColor';
+import css from './Statistics.module.css';
 
-const Statistics = ({ title = '', stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
-    <section class="statistics">
-      <h2 class="statistics__title">{title}</h2>
+    <section className={css.statistics}>
+      {title && <h2 className={css.title}>{title}</h2>}
 
-      <ul class="stat-list">
+      <ul className={css.stats__list}>
         {stats.map(({ id, label, percentage }) => {
           return (
             <li
-              class="stat-list__item"
+              className={css.stats}
               key={id}
               style={{ backgroundColor: randomColor() }}
             >
-              <span class="stat-list__label">{label}</span>
-              <span class="stat-list__percentage">{percentage}</span>
+              <span className={css.label}>{label}</span>
+              <span className={css.percentage}>{percentage}</span>
             </li>
           );
         })}
       </ul>
     </section>
   );
-  
 };
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
-  stats: PropTypes.array.isRequired,
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
-
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Statistics;
