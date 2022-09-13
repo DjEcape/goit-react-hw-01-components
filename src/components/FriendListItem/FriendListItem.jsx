@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import css from './FriendsItem.module.css';
 
-const FriendListItem = ({ avatar, name, isOnline , id}) => {
+const FriendListItem = ({ avatar, name, isOnline }) => {
     return ( 
-        <li className={css.friends__item} key={id}>
+        <li className={css.friends__item}>
         <span className={`${css.friends__status} ${css[isOnline]}`}>
           {isOnline}
         </span>

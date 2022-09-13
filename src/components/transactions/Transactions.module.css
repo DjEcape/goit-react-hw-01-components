@@ -4,6 +4,7 @@ table {
     width: 768px;
     border-spacing: 0;
     margin: 0 auto;
+    background-color: whitesmoke;
   }
   thead tr {
     margin-bottom: 5px;

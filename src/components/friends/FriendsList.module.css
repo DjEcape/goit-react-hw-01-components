@@ -5,6 +5,7 @@
     flex-direction: column;
     width: 768px;
     margin: 0 auto;
+    background-color: whitesmoke;
   }
   
   .friends__list {
